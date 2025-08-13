@@ -36,9 +36,9 @@ The database contains the information collected during the 2007 Household Travel
 Stores data related to the dwelling. The primary key for this table is **idTr_Vivie**.
 
 ### File description
-- **Name:** Tr_Viviendas.dbf  
-- **File type:** FoxPro Database  
-- **Total records:** 49,488  
+- **Name:** Tr_Viviendas.dbf
+- **File type:** FoxPro Database
+- **Total records:** 49,488
 - **Record length:** 21 fields, 110 characters
 
 ### Table description
@@ -74,9 +74,9 @@ Stores data related to the dwelling. The primary key for this table is **idTr_Vi
 Stores data collected for households. The primary key for this table is **idTr_Hogar**. *(Source note mentions: one‑to‑many merge to dwellings, matching idTr_Vivie.)*
 
 ### File description
-- **Name:** Tr_Hogares.dbf  
-- **File type:** FoxPro Database  
-- **Total records:** 51,475  
+- **Name:** Tr_Hogares.dbf
+- **File type:** FoxPro Database
+- **Total records:** 51,475
 - **Record length:** 27 fields, 242 characters
 
 ### Table description
@@ -118,9 +118,9 @@ Stores data collected for households. The primary key for this table is **idTr_H
 Stores data collected for residents. The primary key for this table is **idTr_Resid**.
 
 ### File description
-- **Name:** Tr_Residente.dbf  
-- **File type:** FoxPro Database  
-- **Total records:** 204,007  
+- **Name:** Tr_Residente.dbf
+- **File type:** FoxPro Database
+- **Total records:** 204,007
 - **Record length:** 33 fields, 325 characters
 
 ### Table description
@@ -168,9 +168,9 @@ Stores data collected for residents. The primary key for this table is **idTr_Re
 Stores data collected for trips. The primary key for this table is **idTr_Viaje**.
 
 ### File description
-- **Name:** Tr_Viajes.dbf  
-- **File type:** FoxPro Database  
-- **Total records:** 232,317  
+- **Name:** Tr_Viajes.dbf
+- **File type:** FoxPro Database
+- **Total records:** 232,317
 - **Record length:** 29 fields, 478 characters
 
 ### Table description
@@ -214,9 +214,9 @@ Stores data collected for trips. The primary key for this table is **idTr_Viaje*
 Contains data on people with disabilities in each household. The primary key is **idTr_Disca**.
 
 ### File description
-- **Name:** Tr_Discapacitados.dbf  
-- **File type:** FoxPro Database  
-- **Total records:** 3,411  
+- **Name:** Tr_Discapacitados.dbf
+- **File type:** FoxPro Database
+- **Total records:** 3,411
 - **Record length:** 3 fields, 65 characters
 
 ### Table description
@@ -234,9 +234,9 @@ Contains data on people with disabilities in each household. The primary key is 
 Contains data on vehicles in the household. The primary key is **idTr_Vehic**.
 
 ### File description
-- **Name:** Tr_Vehiculos.dbf  
-- **File type:** FoxPro Database  
-- **Total records:** 30,215  
+- **Name:** Tr_Vehiculos.dbf
+- **File type:** FoxPro Database
+- **Total records:** 30,215
 - **Record length:** 7 fields, 133 characters
 
 ### Table description
@@ -255,4 +255,3 @@ Contains data on vehicles in the household. The primary key is **idTr_Vehic**.
 ---
 
 *End of document.*
-
