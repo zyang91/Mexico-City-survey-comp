@@ -8,6 +8,6 @@ Mexico City Travel Survey Comparison (2009-2017)
 - Much complicated than Bogota one
 
 ## 2017 Structure and issue
-- 5.14 (each mode is each column, like from `skitlearn`)
+- 5.14 (each mode is each column, like from `sklearn`)
 - data directory available
 - reaggreate and updated the files directories
