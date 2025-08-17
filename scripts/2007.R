@@ -46,7 +46,7 @@ combo_2<- trip2_summarised %>%
   separate(key, into = c("trip1", "trip2"), sep = "_", fill = "right")
 
 combined_2_1<-10+69+438+17214+26+9+3
-
+  
 combo_2<-combo_2%>%
   filter(!is.na(trip2))
 
@@ -205,7 +205,7 @@ combo_4<-combo_4%>%
   group_by(key) %>%
   summarise(count = sum(count), .groups = "drop") %>%
   separate(key, into = c("trip1", "trip2", "trip3", "trip4"), sep = "_", fill = "right")
-
+  
 
 trip5_or_more<- trip_2007 %>%
   filter(!is.na(trip5) & is.na(trip6))
@@ -349,23 +349,23 @@ library(tidyr)
 combine_trip_tables <- function(..., max_trips = 6, unordered_within_row = FALSE) {
   trip_cols_all <- paste0("trip", seq_len(max_trips))
   dfs <- list(...)
-
+  
   standardize_one <- function(x) {
     trip_cols <- intersect(names(x), trip_cols_all)
     if (!"count" %in% names(x)) stop("Each data frame must have a 'count' column.")
-
+    
     x <- x %>%
       mutate(across(all_of(trip_cols), as.character),   # keep existing NA as-is
              count = as.numeric(count))
-
+    
     missing <- setdiff(trip_cols_all, names(x))
     if (length(missing)) x[missing] <- NA_character_
-
+    
     x %>% select(all_of(trip_cols_all), count)
   }
-
+  
   big <- dfs %>% map(standardize_one) %>% bind_rows()
-
+  
   if (unordered_within_row) {
     big %>%
       mutate(key = apply(select(., all_of(trip_cols_all)), 1,
@@ -387,3 +387,4 @@ combined <- combine_trip_tables(combo_2, combo_3,combo_4, combo_6, combo_5, max_
 sum(combined$count)+combined_2_1+Combined_3_1+combined_4_1+combined_5_1+sum(single_mode$count)
 
 #write.csv(combined, "data/2007/mutimodal_trip_combined_2007.csv", row.names = FALSE)
+
