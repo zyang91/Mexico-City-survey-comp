@@ -1,0 +1,15 @@
+"trip1","trip2","trip3","trip4","trip5","trip6","count"
+"Bus","Metro",NA,NA,NA,NA,38029
+"Metro",NA,NA,NA,NA,NA,3328
+"Bus",NA,NA,NA,NA,NA,2879
+"Bus","Other",NA,NA,NA,NA,2229
+"Bus","Metro","Other",NA,NA,NA,1793
+"Metro","Other",NA,NA,NA,NA,1663
+"BRT","Bus",NA,NA,NA,NA,1052
+"BRT","Bus","Metro",NA,NA,NA,497
+"BRT","Metro",NA,NA,NA,NA,348
+"Other",NA,NA,NA,NA,NA,106
+"BRT","Other",NA,NA,NA,NA,66
+"BRT","Bus","Other",NA,NA,NA,32
+"BRT","Metro","Other",NA,NA,NA,30
+"BRT","Bus","Metro","Other",NA,NA,14

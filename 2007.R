@@ -386,3 +386,5 @@ combined <- combine_trip_tables(combo_2, combo_3,combo_4, combo_6, combo_5, max_
 
 sum(combined$count)+combined_2_1+Combined_3_1+combined_4_1+combined_5_1+sum(single_mode$count)
 
+#write.csv(combined, "data/2007/mutimodal_trip_combined_2007.csv", row.names = FALSE)
+
