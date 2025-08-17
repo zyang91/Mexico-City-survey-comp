@@ -17,12 +17,49 @@ n_total <- nrow(one_mode)
 summary_tbl <- one_mode %>%
   summarise(across(starts_with("P5_14_"), ~ sum(!is.na(.)))) %>%
   pivot_longer(everything(), names_to = "column", values_to = "n_valid") %>%
-  arrange(desc(n_valid)) %>%
-  mutate(pct_valid = n_valid / n_total)
+  arrange(desc(n_valid))
 
 
 two_mode<- trip_14 %>%
   filter(rowSums(!is.na(across(everything()))) == 2)
+
+# get rid of walking
+two_mode<- two_mode %>%
+  mutate(P5_14_14 = ifelse(is.na(P5_14_14), NA, NA))
+two_one_combined_walking<- two_mode%>%
+  filter(rowSums(!is.na(across(everything()))) == 1)
+summary_tbl_one_mode_plus <- two_one_combined_walking %>%
+  summarise(across(starts_with("P5_14_"), ~ sum(!is.na(.)))) %>%
+  pivot_longer(everything(), names_to = "column", values_to = "n_valid") %>%
+  arrange(desc(n_valid))
+summary_one<-rbind(summary_tbl, summary_tbl_one_mode_plus)%>%
+  group_by(column) %>%
+  summarise(n_valid = sum(n_valid))
+
+# actual two mode processing
+two_mode<-two_mode%>%
+  filter(rowSums(!is.na(across(everything()))) == 2)
+two_mode<- two_mode%>%
+  mutate(P5_14_01 = ifelse(is.na(P5_14_01), NA, "Other"),
+         P5_14_02 = ifelse(is.na(P5_14_02), NA, "Bus"),
+         P5_14_03 = ifelse(is.na(P5_14_03), NA, "Other"),
+         P5_14_04 = ifelse(is.na(P5_14_04), NA, "Other"),
+         P5_14_05 = ifelse(is.na(P5_14_05), NA, "Metro"),
+         P5_14_06 = ifelse(is.na(P5_14_06), NA, "Bus"),
+         P5_14_07 = ifelse(is.na(P5_14_07), NA, "Bike"),
+         P5_14_08 = ifelse(is.na(P5_14_08), NA, "Bus"),
+         P5_14_09 = ifelse(is.na(P5_14_09), NA, "Other"),
+         P5_14_10 = ifelse(is.na(P5_14_10), NA, "Bus"),
+         P5_14_11 = ifelse(is.na(P5_14_11), NA, "BRT"),
+         P5_14_12 = ifelse(is.na(P5_14_12), NA, "Metro"),
+         P5_14_13 = ifelse(is.na(P5_14_13), NA, "Metro"),
+         P5_14_14 = ifelse(is.na(P5_14_14), NA, NA),
+         P5_14_15 = ifelse(is.na(P5_14_15), NA, "Metro"),
+         P5_14_16 = ifelse(is.na(P5_14_16), NA, "Other"),
+         P5_14_17 = ifelse(is.na(P5_14_17), NA, "Other"),
+         P5_14_18 = ifelse(is.na(P5_14_18), NA, "Bus"),
+         P5_14_19 = ifelse(is.na(P5_14_19), NA, "other"),
+         P5_14_20 = ifelse(is.na(P5_14_20), NA, "other"))
 
 
 three_mode <- trip_14 %>%
