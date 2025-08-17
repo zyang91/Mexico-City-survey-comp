@@ -4,14 +4,14 @@ library(tidyverse)
 trip_2017<- read.csv("data/2017/trip_2017.csv")
 
 
-trip_14 <- trip_2017 %>% 
-  select(starts_with("P5_14"))  
+trip_14 <- trip_2017 %>%
+  select(starts_with("P5_14"))
 
 trip_14[trip_14 == 2] <- NA
 
 one_mode <- trip_14 %>%
   filter(rowSums(!is.na(across(everything()))) == 1)
-  
+
 n_total <- nrow(one_mode)
 
 summary_tbl <- one_mode %>%

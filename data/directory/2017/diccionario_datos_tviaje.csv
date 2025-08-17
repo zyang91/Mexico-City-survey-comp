@@ -1,4 +1,4 @@
-﻿nombre_campo,longitud,tipo,nemónico,catálogo,rango_claves   
+﻿nombre_campo,longitud,tipo,nemónico,catálogo,rango_claves
 "Identificador de viaje","6","N","id_via","","1-531594"
 "Identificador de persona","6","N","id_soc","","1-200117"
 "Pregunta 5.3 Clasificación del día de viaje","1","C","p5_3","p5_3","1,2"
