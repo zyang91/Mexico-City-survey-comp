@@ -3,9 +3,10 @@
 Mexico City Travel Survey Comparison (2009-2017)
 
 
-## 2007 structure and issues
-- aggregated format with combination (need to extraction and guideline)
-- Much complicated than Bogota one
+## 2007 structure 
+**Data processing completed**
+- Single-mode classification
+- multimodal connection analysis 
 
 ## 2017 Structure and issue
 - 5.14 (each mode is each column, like from `sklearn`)
