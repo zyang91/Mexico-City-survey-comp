@@ -47,12 +47,12 @@ ggplot(percet_2007, aes(x = reorder(x, X2007), y = X2007, fill = x)) +
     plot.margin = margin(5.5, 20, 5.5, 5.5)     # a bit more right margin
   )
 
-percet<-tables%>%
+percent<-tables%>%
   filter(!is.na(X2017))
-percet <- percet %>%
+percent <- percent %>%
   mutate(X2017 = parse_number(X2017))
-maxy2 <- max(percet$X2017, na.rm = TRUE)
-ggplot(percet, aes(x = reorder(x, X2017), y = X2017, fill = x)) +
+maxy2 <- max(percent$X2017, na.rm = TRUE)
+ggplot(percent, aes(x = reorder(x, X2017), y = X2017, fill = x)) +
   geom_bar(stat = "identity") +
   geom_text(aes(label = paste0(X2017, "%")), hjust = -0.1, size = 3) +
   coord_flip(clip = "off") +  # let text draw outside the panel
