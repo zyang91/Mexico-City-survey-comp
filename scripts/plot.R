@@ -108,16 +108,16 @@ ggplot(metro_2007,
 
 metro_2017<- metro %>%
   filter(!is.na(count_2)) %>%
-  mutate(percet_metro_2017 = count_2/sum(count_2))
+  mutate(percent_metro_2017 = count_2/sum(count_2))
 
-maxy4 <- max(metro_2017$percet_metro_2017, na.rm = TRUE)
+maxy4 <- max(metro_2017$percent_metro_2017, na.rm = TRUE)
 
 ggplot(metro_2017,
-       aes(x = reorder(multi_la_17, percet_metro_2017),
-           y = percet_metro_2017,
+       aes(x = reorder(multi_la_17, percent_metro_2017),
+           y = percent_metro_2017,
            fill = multi_label)) +
   geom_col() +
-  geom_text(aes(label = scales::percent(percet_metro_2017, accuracy = 0.1)),
+  geom_text(aes(label = scales::percent(percent_metro_2017, accuracy = 0.1)),
             hjust = -0.1, size = 2.8) +  # smaller text
   coord_flip(clip = "off") +
   scale_y_continuous(
