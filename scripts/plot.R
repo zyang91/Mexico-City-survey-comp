@@ -228,14 +228,14 @@ ggplot(non_brt_2007,
 non_brt_2017<- tables %>%
   filter(x== "Non BRT bus") %>%
   filter(!is.na(count_2)) %>%
-  mutate(percet_non_brt_2017 = count_2/sum(count_2))
-maxy8 <- max(non_brt_2017$percet_non_brt_2017, na.rm = TRUE)
+  mutate(percent_non_brt_2017 = count_2/sum(count_2))
+maxy8 <- max(non_brt_2017$percent_non_brt_2017, na.rm = TRUE)
 ggplot(non_brt_2017,
-       aes(x = reorder(multi_la_17, percet_non_brt_2017),
-           y = percet_non_brt_2017,
+       aes(x = reorder(multi_la_17, percent_non_brt_2017),
+           y = percent_non_brt_2017,
            fill = multi_label)) +
   geom_col() +
-  geom_text(aes(label = scales::percent(percet_non_brt_2017, accuracy = 0.1)),
+  geom_text(aes(label = scales::percent(percent_non_brt_2017, accuracy = 0.1)),
             hjust = -0.1, size = 2.8) +  # smaller text
   coord_flip(clip = "off") +
   scale_y_continuous(
