@@ -6,13 +6,13 @@ library(scales)
 
 tables<- read.csv("Mode_Choice_Comparison_Summary.csv")
 
-percet_2007<-tables%>%
+percent_2007<-tables%>%
   filter(!is.na(X2007))
 
-percet_2007 <- percet_2007 %>%
-  mutate(X2007 = parse_number(X2007))
+percent_2007 <- percent_2007 %>%
+  mutate(X2007 = parse_number(X2007)) 
 
-ggplot(percet_2007, aes(x = reorder(x, X2007), y = X2007, fill = x)) +
+ggplot(percent_2007, aes(x = reorder(x, X2007), y = X2007, fill = x)) +
   geom_bar(stat = "identity") +
   coord_flip() +
   labs(title = "Percentage of Trips by Mode in 2007",
