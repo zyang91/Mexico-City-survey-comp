@@ -1,0 +1,33 @@
+﻿x,2007,single_label,count,2007_m,multi_label,count2,2017,single_la_17,count_1,2017_m,multi_la_17,count_2
+Walk,NA,NA,0,NA,NA,NA,30.33%,caminar en la calle (14),161216,NA,NA,NA
+Bike,1.98%,Bicicleta (B),4592,NA,NA,NA,2.20%,Bicicleta (07),11681,NA,NA,NA
+Car,28.21%,automovil (9),65543,NA,NA,NA,20.74%,automovil (01),110265,NA,NA,NA
+Taxi,6.19%,Taxi (8),14391,NA,NA,NA,4.99%,Taxi (App) (03),2456,NA,NA,NA
+Taxi,NA,NA,NA,NA,NA,NA,NA,Taxi (04),19949,NA,NA,NA
+Taxi,NA,NA,NA,NA,NA,NA,NA,Bicitaxi (16),1008,NA,NA,NA
+Taxi,NA,NA,NA,NA,NA,NA,NA,Mototaxi (17),3091,NA,NA,NA
+Motorcycle,0.38%,Moto (A),892,NA,NA,NA,1.07%,Moto (09),5674,NA,NA,NA
+Metro & Light rail,6.13%,"Metro, light rail (only)",14242,19.67%,Metro+ light rail (metro),3328,2.46%,Metro(05),12870,10.64%,BRT+metro,1955
+Metro & Light rail,NA,NA,NA,NA,Metro+BRT,348,NA,NA,NA,NA,Bus+Metro,47348
+Metro & Light rail,NA,NA,NA,NA,"Metro + Others (taxi, dirve, motorcycle)",1663,NA,Tren Ligero(12),117,NA,Metro+ other mode of metro,282
+Metro & Light rail,NA,NA,NA,NA,Metro +Bus,38029,NA,Tren suburbano (13),57,NA,NA,NA
+Metro & Light rail,NA,NA,NA,NA,Metro +BRT +bus,497,NA,Mexicable  (15),42,NA,Metro+other,2266
+Metro & Light rail,NA,NA,NA,NA,Metro+BRT+other,30,NA,NA,NA,NA,BRT +bus +metro,2249
+Metro & Light rail,NA,NA,NA,NA,metro+bus+other,1793,NA,NA,NA,NA,BRT + Metro+other,396
+Metro & Light rail,NA,NA,NA,NA,Metro+BRT+ bus+other,14,NA,NA,NA,NA,Bus+metro+other,1938
+Metro & Light rail,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,BRT+bus+metro+other,147
+BRT,0.22%,Metrobus (only),515,0.50%,Metro bus +Bus,1052,0.93%,"metrobus,Mexibus(11)",4966,1.19%,BRT+Bus,5601
+BRT,NA,NA,NA,NA,Metrobus +others,66,NA,NA,NA,NA,BRT+other,462
+BRT,NA,NA,NA,NA,Metrobus+ bus+other,32,NA,NA,NA,NA,BRT +bus +other,242
+Non BRT bus,33.52%,Trolebus (4),837,2.20%,bus+ other bus,2879,23.29%,Trolebus (Trolley) (10),831,1.95%,Bus+other Bus (two mode of bus connect),5823
+Non BRT bus,NA,Autobus RTP Autobus (5),2127,,Bus+ Other mode,2229,NA,Autobus RTP M1 (06),2095,NA,Bus+ other,4530
+Non BRT bus,NA,Colectivo (only) (7),74916,NA,NA,NA,NA,Autobus (08),4912,NA,NA,NA
+Non BRT bus,NA,NA,NA,NA,NA,NA,NA,Colectivo/Micro (02),113668,NA,NA,NA
+Non BRT bus,NA,NA,NA,NA,NA,NA,NA,Transporte  escolar  (18),2297,NA,NA,NA
+Other,0.95%,Otro  (C ),2196,0.05%,Other mode combined (no public transit),106,0.17%,Otro (20),587,0.05%,Other mode combined (no public transit involved),242
+Other,NA,NA,NA,NA,NA,NA,NA,Transporte  de personal (19),331,NA,NA,NA
+sum,NA,NA,180251,NA,NA,52066,NA,NA,458113,NA,NA,73481
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,232317,NA,NA,NA,NA,NA,531594,NA,NA,NA
+NA,NA,NA,77.59%,NA,NA,NA,NA,NA,86.18%,NA,NA,NA
