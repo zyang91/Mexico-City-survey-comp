@@ -139,16 +139,16 @@ ggplot(metro_2017,
 brt_2017<- tables %>%
   filter(x== "BRT") %>%
   filter(!is.na(count_2)) %>%
-  mutate(percet_brt_2017 = count_2/sum(count_2))
+  mutate(percent_brt_2017 = count_2/sum(count_2))
 
-maxy5 <- max(brt_2017$percet_brt_2017, na.rm = TRUE)
+maxy5 <- max(brt_2017$percent_brt_2017, na.rm = TRUE)
 
 ggplot(brt_2017,
-       aes(x = reorder(multi_la_17, percet_brt_2017),
-           y = percet_brt_2017,
+       aes(x = reorder(multi_la_17, percent_brt_2017),
+           y = percent_brt_2017,
            fill = multi_label)) +
   geom_col() +
-  geom_text(aes(label = scales::percent(percet_brt_2017, accuracy = 0.1)),
+  geom_text(aes(label = scales::percent(percent_brt_2017, accuracy = 0.1)),
             hjust = -0.1, size = 2.8) +  # smaller text
   coord_flip(clip = "off") +
   scale_y_continuous(
