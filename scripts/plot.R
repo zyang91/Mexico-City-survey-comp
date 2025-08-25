@@ -4,7 +4,7 @@ library(ggrepel)
 library(patchwork)
 library(scales)
 
-tables<- read.csv("Mode_Choice_Comparison_Summary.csv")
+tables<- read.csv("data/Mode_Choice_Comparison_Summary.csv")
 
 percent_2007<-tables%>%
   filter(!is.na(X2007))
@@ -51,6 +51,15 @@ percent<-tables%>%
   filter(!is.na(X2017))
 percent <- percent %>%
   mutate(X2017 = parse_number(X2017))
+
+# special accomodation
+percent<- percent %>%
+  filter(x != "Walk") 
+
+percent<-percent%>%
+  mutate(X2017= X2017/sum(X2017)*100)
+percent<-percent%>%
+  mutate(X2017= round(X2017,2))
 maxy2 <- max(percent$X2017, na.rm = TRUE)
 ggplot(percent, aes(x = reorder(x, X2017), y = X2017, fill = x)) +
   geom_bar(stat = "identity") +
@@ -166,6 +175,7 @@ ggplot(brt_2017,
     plot.title = element_text(hjust = 0.5),
     plot.margin = margin(5.5, 28, 5.5, 5.5)     # extra right margin for text
   )
+
 brt_2007<- tables %>%
   filter(x== "BRT") %>%
   filter(!is.na(count2)) %>%
@@ -225,6 +235,7 @@ ggplot(non_brt_2007,
     plot.title = element_text(hjust = 0.5),
     plot.margin = margin(5.5, 28, 5.5, 5.5)     # extra right margin for text
   )
+
 non_brt_2017<- tables %>%
   filter(x== "Non BRT bus") %>%
   filter(!is.na(count_2)) %>%
@@ -246,6 +257,62 @@ ggplot(non_brt_2017,
   scale_fill_brewer(palette = "Set3") +
   labs(title = "Percentage of  Multimodal Non BRT Bus Trips in 2017",
        x = "Non BRT Bus Lines",
+       y = "Percentage of Trips") +
+  theme_minimal(base_size = 10) +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(hjust = 0.5),
+    plot.margin = margin(5.5, 28, 5.5, 5.5)     # extra right margin for text
+  )
+
+volume<- read.csv("binary-distri.csv")
+volume<- volume %>%
+  mutate(volume_2007= volume_2007/ 100)
+maxy8 <- max(volume$volume_2007, na.rm = TRUE)
+ggplot(volume,
+       aes(x = reorder(type_2007, volume_2007),
+           y = volume_2007,
+           fill = type_2007)) +
+  geom_col() +
+  geom_text(aes(label = scales::percent(volume_2007, accuracy = 0.1)),
+            hjust = -0.1, size = 2.8) +  # smaller text
+  coord_flip(clip = "off") +
+  scale_y_continuous(
+    labels = scales::percent_format(),          # assumes data are 0–1
+    limits = c(0, maxy8 * 1.12),
+    expand = expansion(mult = c(0.02, 0.14))    # a bit more room for labels
+  ) +
+  scale_fill_brewer(palette = "Set3") +
+  labs(title = "Multimodal bus vs single ride in 2007",
+       x = "type",
+       y = "Percentage of Trips") +
+  theme_minimal(base_size = 10) +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(hjust = 0.5),
+    plot.margin = margin(5.5, 28, 5.5, 5.5)     # extra right margin for text
+  )
+
+
+volume<- volume %>%
+  mutate(volume_2017= volume_2017/ 100)
+maxy9 <- max(volume$volume_2017, na.rm = TRUE)
+ggplot(volume,
+       aes(x = reorder(type_2017, volume_2017),
+           y = volume_2017,
+           fill = type_2017)) +
+  geom_col() +
+  geom_text(aes(label = scales::percent(volume_2017, accuracy = 0.1)),
+            hjust = -0.1, size = 2.8) +  # smaller text
+  coord_flip(clip = "off") +
+  scale_y_continuous(
+    labels = scales::percent_format(),          # assumes data are 0–1
+    limits = c(0, maxy9 * 1.12),
+    expand = expansion(mult = c(0.02, 0.14))    # a bit more room for labels
+  ) +
+  scale_fill_brewer(palette = "Set3") +
+  labs(title = "Multimodal bus vs single ride in 2017",
+       x = "type",
        y = "Percentage of Trips") +
   theme_minimal(base_size = 10) +
   theme(
